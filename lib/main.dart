@@ -1,7 +1,9 @@
+import 'package:basic_widget/model/widget.dart';
+import 'package:basic_widget/rating.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(Rating());
 }
 
 class MainApp extends StatelessWidget {
@@ -9,10 +11,33 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        appBar: AppBar(
+          title: Text(
+            'Basic Widget',
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.purple,
+          centerTitle: true,
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/ass1.gif',
+              width: 300,
+              height: 200,
+              fit: BoxFit.cover,
+            ),
+            Center(child: Text('Hello world')),
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Text("click me"),
+          backgroundColor: Colors.orangeAccent,
         ),
       ),
     );
